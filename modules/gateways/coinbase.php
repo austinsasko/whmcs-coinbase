@@ -58,55 +58,6 @@ function coinbase_link($params) {
 
 }
 
-// Are refunds pratical? You would need to ask the user for their wallet address, otherwise you might refund the payment back to an online wallet or some other intermediary service.
-/*function coinbase_refund($params) {
-
-  # Gateway Specific Variables
-  $api_key  = $params['coinbase_api_key'];
-  $url      = 'https://coinbase.com/api/v1/buttons?api_key=' . $api_key;
-
-  # Invoice Variables
-  $transid      = $params['transid'];
-  $invoiceid    = $params['invoiceid'];
-  $description  = $params["description"];
-  $amount       = $params['amount']; # Format: ##.##
-  $currency     = $params['currency']; # Currency Code
-
-    # Client Variables
-  $firstname = $params['clientdetails']['firstname'];
-  $lastname = $params['clientdetails']['lastname'];
-  $email = $params['clientdetails']['email'];
-  $address1 = $params['clientdetails']['address1'];
-  $address2 = $params['clientdetails']['address2'];
-  $city = $params['clientdetails']['city'];
-  $state = $params['clientdetails']['state'];
-  $postcode = $params['clientdetails']['postcode'];
-  $country = $params['clientdetails']['country'];
-  $phone = $params['clientdetails']['phonenumber'];
-
-  # Card Details
-  $cardtype = $params['cardtype'];
-  $cardnumber = $params['cardnum'];
-  $cardexpiry = $params['cardexp']; # Format: MMYY
-  $cardstart = $params['cardstart']; # Format: MMYY
-  $cardissuenum = $params['cardissuenum'];
-
-  # Perform Refund Here & Generate $results Array, eg:
-  $results = array();
-  $results["status"] = "success";
-    $results["transid"] = "12345";
-
-  # Return Results
-  if ($results["status"]=="success") {
-    return array("status"=>"success","transid"=>$results["transid"],"rawdata"=>$results);
-  } elseif ($gatewayresult=="declined") {
-        return array("status"=>"declined","rawdata"=>$results);
-    } else {
-    return array("status"=>"error","rawdata"=>$results);
-  }
-
-}*/
-
 function coinbase_button_request($invoiceid, $amount, $currency, $description, $type, $style, $text, $url, $ca_path, $api_auth) {
 
   $button_data = array(
