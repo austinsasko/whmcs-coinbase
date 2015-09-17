@@ -13,5 +13,5 @@
 - On this same page, you can now configure the module, mainly you'll want to pay close attention to these items: 
  - Coinbase API Key - This is generated from within Coinbase, keep this private 
  - Coinbase CA Cert Path - This will be the path where the ca-coinbase.crt is. 
- - Coinbase Callback Secret - Generate a long and random string and input it in this field. Provide this to Coinbase on the backend. This is used to authenticate their callback in the field "Callback URL" example being http://example.com/modules/gateway/callback/coinbase.php?secret=1f2d3e4r5t1s19s Make sure to enter that in both WHMCS and coinbase 
+ - Coinbase Callback Secret - Generate a long and random string and input it in this field. Provide this to Coinbase on the backend under Callback URL at https://www.coinbase.com/merchant_settings . This is used to authenticate their callback in the field "Callback URL" example being http://example.com/modules/gateway/callback/coinbase.php?secret=1f2d3e4r5t1s19s Make sure to enter that in both WHMCS and Coinbase 
 - Save your changes and do a test transaction
