@@ -1,7 +1,7 @@
 <?php
 # HostDark.com
 # Required File Includes
-include("../../../dbconnect.php");
+require("../../../init.php");
 include("../../../includes/functions.php");
 include("../../../includes/gatewayfunctions.php");
 include("../../../includes/invoicefunctions.php");
@@ -32,7 +32,7 @@ $total_btc_currency = $order->total_btc->currency_iso;
 $total_native_cents = $order->total_native->cents;
 $total_native_currency = $order->total_native->currency_iso;
 $invoice_id = $order->custom;
-$trans_id = $order->transaction->hash;
+$trans_id = $order->transaction->id;
 $confirmation = $order->transaction->confirmation;
 $fee = '0.00';
 $amount = number_format($total_native_cents/100, 2, '.', '');
@@ -48,7 +48,7 @@ if ($status=="completed") {
   $values["invoiceid"] = $invoice_id; #changeme
   $values["notes"] = "BTC:{$total_btc_cents}; > USD:{$total_native_cents};"; #changeme
   $results = localAPI($command,$values,$adminuser);
-//Adds the transaction + Invoice Payment
+//Adds the transaction + Invoice Payment  
   $command = "addinvoicepayment";
   $values["invoiceid"] = $invoice_id;
   $values["transid"] = $trans_id;
@@ -61,7 +61,7 @@ if ($status=="completed") {
 
   # Cancelled
   $command = "updateinvoice";
-  $values["invoiceid"] = $invoice_id;
+  $values["invoiceid"] = $invoice_id; 
   $values["status"] = "Unpaid";
   $results = localAPI($command,$values,$adminuser);
   logTransaction($GATEWAY["name"],file_get_contents('php://input'),"Cancelled"); # Save to Gateway Log: name, data array, status
@@ -74,3 +74,6 @@ if ($status=="completed") {
 }
 
 ?>
+
+
+
