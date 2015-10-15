@@ -15,4 +15,4 @@
  - Coinbase CA Cert Path - This will be the path where the ca-coinbase.crt is. 
  - Coinbase Callback Secret - Generate a long and random string and input it in this field. Provide this to Coinbase on the backend under Callback URL at https://www.coinbase.com/merchant_settings . This is used to authenticate their callback in the field "Callback URL" example being http://example.com/modules/gateway/callback/coinbase.php?secret=1f2d3e4r5t1s19s Make sure to enter that in both WHMCS and Coinbase 
 - Save your changes and do a test transaction
-- For the coinbase API http://i.imgur.com/7gLv0LT.png select Merchant, button, orders, and recurring payments on API v1
+- For the coinbase API http://i.imgur.com/XUHg9Zm.png select Merchant, button, orders, and recurring payments on API v1
