@@ -4,7 +4,7 @@
 
 
 
-
+**Make sure https://www.coinbase.com/merchant_profiles is filled out, legitimate or illegitimate information, just make sure it is completed. Your merchant profile wont work with the buttons without this completed. The payment buttons will not show (common issue) because of this**
 
 - Upload the contents to your web server
 - Move the contents of this module into the WHMCS root directory
